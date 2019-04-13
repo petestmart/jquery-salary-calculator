@@ -13,24 +13,29 @@
     <h1>jQuery Salary Calculator</h1>
     <div class="form">
         <h2>Add Employee</h2>
-        <input id="firstName" placeholder="first name" /> <input id="lastName" placeholder="last name" /> <input id="empID" placeholder="employee ID" /> <input id="jobTitle" placeholder="job title" /> <input id="annualSalary" placeholder="annual salary" /> 
+        <input id="firstNameIn" placeholder="first name" /> <input id="lastNameIn" placeholder="last name" /> <input id="empIdIn" placeholder="employee ID" /> <input id="jobTitleIn" placeholder="job title" /> <input id="annualSalaryIn" placeholder="annual salary" /> 
     </div>
     <div class="submitButton">
         <button id="submitButton">Submit</button>
     </div>
     <div class="Table">
-        <ul id="employeeTable"><h2>Employees</h2>
-            <ul id="firstName">FIRST_NAME</ul> <!-- end firstName -->
-                <li>line item</li>
-            <ul id="lastName">LAST_NAME</ul> <!-- end lastName -->
-                <li>line item</li>
-            <ul id="employeeID">EMPLOYEE_ID</ul> <!-- end employeeID -->
-                <li>line item</li>
-            <ul id="jobTitle">JOB_TITLE</ul> <!-- end jobTitle -->
-                <li>line item</li>
-            <ul id="annualSalary">ANNUAL_SALARY</ul> <!-- end annualSalary -->
-                <li>line item</li>
-        </ul> <!-- end employeeTable -->
+        <h2>Employees</h2>
+        <table>
+            <thead> <!-- columns -->
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Employee ID</th>
+                <th>Job Title</th>
+                <th>Annual Salary</th>
+            <tbody>
+                <td id="firstNameOut"> table data 1</td>
+                <td id="lastNameOut"> table data 2</td>
+                <td id="empIdOut"> table data 3</td>
+                <td id="jobTitleOut"> table data 4</td>
+                <td id="annualSalaryOut"> table data 5</td>
+            </tbody>
+        </table>
+
     </div>
 </body>
 </html>
