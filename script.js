@@ -34,15 +34,34 @@ function storeInfo(){
                 <td id="annualSalaryOut">${annualSalaryTyped}</td>
             </tbody>
         `)
-        //Clear the inputs; Setter, Irish
+        // Add Employee To an Object
+        let employeeIn = {
+            firstName: firstNameTyped,
+            lastName: lastNameTyped,
+            empID: empIdTyped,
+            jobTitle: jobTitleTyped,
+            annualSalary: annualSalaryTyped
+        }
+        employees.push( employeeIn )
+        // Clear the inputs; Setter, Irish
         $('#firstNameIn').val('');
         $('#lastNameIn').val('');
         $('#empIdIn').val('');
         $('#jobTitleIn').val('');
         $('#annualSalaryIn').val('');
 
-        monthlyCalc();
+        // monthlyCalc();
     }) // end click submit
 } // end storeInfo
 
 // function to calculate the monthly total and append it to the DOM
+// function monthlyCalc() {
+//     //declare a variable to represent total monthly cost
+    
+//     // target totalMonthly 
+//     // calculate
+//     $('#totalMonthly').empty(); 
+//     $('#totalMonthly').append( );
+//     // append total monthly to the DOM
+    
+// }
