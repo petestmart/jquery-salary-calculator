@@ -50,18 +50,21 @@ function storeInfo(){
         $('#jobTitleIn').val('');
         $('#annualSalaryIn').val('');
 
-        // monthlyCalc();
+        monthlyCalc();
     }) // end click submit
 } // end storeInfo
 
 // function to calculate the monthly total and append it to the DOM
-// function monthlyCalc() {
-//     //declare a variable to represent total monthly cost
+function monthlyCalc() {
+    // loop through employees
+    for( let i=0; i<employees.length; i++ ){
+    //declare variables to use in calculations
+    let annual = ( employees[i].annualSalary );
+    // target totalMonthly 
+    // calculate
     
-//     // target totalMonthly 
-//     // calculate
-//     $('#totalMonthly').empty(); 
-//     $('#totalMonthly').append( );
-//     // append total monthly to the DOM
-    
-// }
+    $('#totalMonthly').empty(); 
+    $('#totalMonthly').append( `${annual}` );
+    // append total monthly to the DOM
+    } // end for loop
+}
