@@ -33,11 +33,11 @@ function storeInfo(){
             </tbody>
         `)
         //Clear the inputs; Setter, Irish
-        $('#nameIn').val('')
-        $('#addressIn').val('')
-        $('#nameIn').val('')
-        $('#addressIn').val('')
-        $('#addressIn').val('')
+        $('#firstNameIn').val('');
+        $('#lastNameIn').val('');
+        $('#empIdIn').val('');
+        $('#jobTitleIn').val('');
+        $('#annualSalaryIn').val('');
     }) // end click submit
     
 } // end storeInfo
