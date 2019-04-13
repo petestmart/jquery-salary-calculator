@@ -3,7 +3,7 @@ $( document ).ready(readyNow);
 console.log( 'JS' );
 
 let employees = [];
-
+let totalAnnualSalaries = [];
 
 
 function readyNow() {
@@ -12,7 +12,7 @@ function readyNow() {
     storeInfo();
 
 }
-// take in information on  button click and append it to the DOM
+// take in information on button click and append it to the DOM
 function storeInfo(){
     $( '#submit' ).on( 'click', function()  {
         console.log( 'submit button clicked' );
@@ -50,21 +50,23 @@ function storeInfo(){
         $('#jobTitleIn').val('');
         $('#annualSalaryIn').val('');
 
-        monthlyCalc();
+        calcSalary();
     }) // end click submit
 } // end storeInfo
 
-// function to calculate the monthly total and append it to the DOM
-function monthlyCalc() {
+// function to add up annual salaries
+function calcSalary() {
     // loop through employees
     for( let i=0; i<employees.length; i++ ){
     //declare variables to use in calculations
     let annual = ( employees[i].annualSalary );
-    // target totalMonthly 
-    // calculate
-    
-    $('#totalMonthly').empty(); 
-    $('#totalMonthly').append( `${annual}` );
-    // append total monthly to the DOM
     } // end for loop
-}
+    totalAnnualSalaries.push(annual);
+} // end function montlyCalc
+
+// function to append the new data to the DOM
+function monthlyAppend() {
+    $('#totalMonthly').empty();
+    // target totalMonthly, calculate, append total monthly to the DOM
+    $('#totalMonthly').append( `${totalAnnualSalaries}` / 12 );
+} // end function monthlyAppend
