@@ -4,6 +4,8 @@ console.log( 'JS' );
 
 let employees = [];
 
+
+
 function readyNow() {
     console.log( 'JQ is R2G' );
     
@@ -25,11 +27,11 @@ function storeInfo(){
         console.log(`user typed ${firstNameTyped}, ${lastNameTyped}, ${empIdTyped}, ${jobTitleTyped}, ${annualSalaryTyped}`);
         $( '#employeeDataTable' ).append(`
              <tbody>
-                <td id="firstNameOut"> table data 1</td>
-                <td id="lastNameOut"> table data 2</td>
-                <td id="empIdOut"> table data 3</td>
-                <td id="jobTitleOut"> table data 4</td>
-                <td id="annualSalaryOut"> table data 5</td>
+                <td id="firstNameOut">${firstNameTyped}</td>
+                <td id="lastNameOut">${lastNameTyped}</td>
+                <td id="empIdOut">${empIdTyped}</td>
+                <td id="jobTitleOut">${jobTitleTyped}</td>
+                <td id="annualSalaryOut">${annualSalaryTyped}</td>
             </tbody>
         `)
         //Clear the inputs; Setter, Irish
@@ -38,6 +40,9 @@ function storeInfo(){
         $('#empIdIn').val('');
         $('#jobTitleIn').val('');
         $('#annualSalaryIn').val('');
+
+        monthlyCalc();
     }) // end click submit
-    
 } // end storeInfo
+
+// function to calculate the monthly total and append it to the DOM
