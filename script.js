@@ -3,7 +3,7 @@ $( document ).ready(readyNow);
 console.log( 'JS' );
 
 let employees = [];
-let totalAnnualSalaries = [];
+// let annualSalaryIn = $('#annualSalaryin').val();
 
 function clearInputs() {
     // Clear the inputs; Setter, Irish
@@ -14,32 +14,32 @@ function clearInputs() {
     $('#annualSalaryIn').val('');
 }
 
-// function to add up annual salaries
-function calcSalary() {
-    console.log('in calcSalary');
-    let sum = x;
-    // loop through employees
-    for (let i = 0; i < employees.length; i++) {
-        if (employees.length < 1) {
-            let calcSecondary = (parseFloat(`${employees[i].annualSalary}`)
-            )
-        } // end if
-        else {
-            let calcSecondary = (parseFloat(`${employees[i].annualSalary}` += $('#annualSalaryIn').val()))
-        } // end else
-    } // end for loop
-    console.log(calcSecondary);
-    totalAnnualSalaries.push(calcSecondary);
-    monthlyAppend();
-} // end function calcSalary
+// // function to add up annual salaries
+// function calcSalary() {
+//     console.log('in calcSalary');
+//     // loop through employees
+//     for (let i = 0; i < employees.length; i++) {
+        
+//     } // end for loop
+    
+    
+//     // monthlyAppend();
+// } // end function calcSalary
 
 // function to append the new data to the DOM
 function monthlyAppend() {
+    //target totalMonthly and empty its current contents
+    let empAnnTot = parseFloat( $('#totalMonthly') );
     $('#totalMonthly').empty();
-    for (let i = 0; i < totalAnnualSalaries.length; i++) {
-        // target totalMonthly, calculate, append total monthly to the DOM
-        $('#totalMonthly').append();
-    } //end for loop totalAnnualSalaries
+    
+        for (let i = 0; i < employees.length; i++) {
+            console.log('employees annual salary:', empAnnTot );
+            let empAnnSal = parseFloat( $('#annualSalaryOut').val() );
+            // target totalMonthly, calculate, append total monthly to the DOM
+            $('#totalMonthly').append( empAnnSal += empAnnTot );
+
+        clearInputs()
+    } // end for loop
 } // end function monthlyAppend
 
 function readyNow() {
@@ -81,6 +81,7 @@ function storeInfo(){
         } // end object employeeIn
         employees.push( employeeIn )
         
-    calcSalary();
+    // calcSalary();
+    monthlyAppend();
     }) // end click submit
 } // end storeInfo
