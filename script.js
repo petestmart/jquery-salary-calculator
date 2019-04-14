@@ -16,6 +16,7 @@ function readyNow() {
 function storeInfo(){
     $( '#submit' ).on( 'click', function()  {
         console.log( 'submit button clicked' );
+        document.getElementById("#annualSalaryIn").innerHTML = totalAnnualSalaries.reduce(calcSalary);
         // declare variables and link them to user data
         let firstNameTyped = $('#firstNameIn').val(); //.val is a GETTER of deets
         let lastNameTyped = $('#lastNameIn').val();
@@ -43,30 +44,34 @@ function storeInfo(){
             annualSalary: annualSalaryTyped
         }
         employees.push( employeeIn )
-        // Clear the inputs; Setter, Irish
-        $('#firstNameIn').val('');
-        $('#lastNameIn').val('');
-        $('#empIdIn').val('');
-        $('#jobTitleIn').val('');
-        $('#annualSalaryIn').val('');
+        
 
-        calcSalary();
     }) // end click submit
 } // end storeInfo
 
 // function to add up annual salaries
-function calcSalary() {
+function calcSalary( total, num ) {
+    return total + num;
     // loop through employees
-    for( let i=0; i<employees.length; i++ ){
-    //declare variables to use in calculations
-    let annual = ( employees[i].annualSalary );
-    } // end for loop
-    totalAnnualSalaries.push(annual);
-} // end function montlyCalc
+    // totalAnnualSalaries.push( $('#annualSalaryIn').val() );
+    // } // end for loop
+    monthlyAppend();
+} // end function calcSalary
 
 // function to append the new data to the DOM
 function monthlyAppend() {
     $('#totalMonthly').empty();
+    for (let i = 0; i < totalAnnualSalaries.length; i++){
     // target totalMonthly, calculate, append total monthly to the DOM
-    $('#totalMonthly').append( `${totalAnnualSalaries}` / 12 );
+    $('#totalMonthly').append( );
+    } //end for loop totalAnnualSalaries
 } // end function monthlyAppend
+
+function clearInputs(){
+    // Clear the inputs; Setter, Irish
+    $('#firstNameIn').val('');
+    $('#lastNameIn').val('');
+    $('#empIdIn').val('');
+    $('#jobTitleIn').val('');
+    $('#annualSalaryIn').val('');
+}
