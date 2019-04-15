@@ -3,6 +3,8 @@ $( document ).ready(readyNow);
 console.log( 'JS' );
 
 let employees = [];
+let monthlyCosts = 0;
+
 // let annualSalaryIn = $('#annualSalaryin').val();
 
 function clearInputs() {
@@ -15,31 +17,27 @@ function clearInputs() {
 }
 
 // // function to add up annual salaries
-// function calcSalary() {
-//     console.log('in calcSalary');
-//     // loop through employees
-//     for (let i = 0; i < employees.length; i++) {
-        
-//     } // end for loop
-    
-    
-//     // monthlyAppend();
-// } // end function calcSalary
+function calcSalary() {
+    let annualCosts = 0;
+    console.log('in calcSalary');
+    // loop through employees
+    for (let i = 0; i < employees.length; i++) {
+        annualCosts += parseFloat(employees[i].annualSalary);
+    } // end for loop
+    // set new monthlyCosts
+    monthlyCosts = ( parseFloat(annualCosts) / 12).toFixed(2);    
+    monthlyAppend();
+} // end function calcSalary
 
 // function to append the new data to the DOM
 function monthlyAppend() {
-    //target totalMonthly and empty its current contents
-    let empAnnTot = parseFloat( $('#totalMonthly') );
-    $('#totalMonthly').empty();
+    console.log('in monthlyAppend');
     
-        for (let i = 0; i < employees.length; i++) {
-            console.log('employees annual salary:', empAnnTot );
-            let empAnnSal = parseFloat( $('#annualSalaryOut').val() );
-            // target totalMonthly, calculate, append total monthly to the DOM
-            $('#totalMonthly').append( empAnnSal += empAnnTot );
-
-        clearInputs()
-    } // end for loop
+    //target totalMonthly and empty its current contents
+    $('#totalMonthly').empty();
+    // target totalMonthly, calculate, append total monthly to the DOM
+    $('#totalMonthly').append( parseFloat(monthlyCosts) );
+    clearInputs()
 } // end function monthlyAppend
 
 function readyNow() {
@@ -64,11 +62,12 @@ function storeInfo(){
         console.log(`user typed ${firstNameTyped}, ${lastNameTyped}, ${empIdTyped}, ${jobTitleTyped}, ${annualSalaryTyped}`);
         $( '#employeeDataTable' ).append(`
              <tbody>
-                <td id="firstNameOut">${firstNameTyped}</td>
-                <td id="lastNameOut">${lastNameTyped}</td>
-                <td id="empIdOut">${empIdTyped}</td>
-                <td id="jobTitleOut">${jobTitleTyped}</td>
-                <td id="annualSalaryOut">${annualSalaryTyped}</td>
+                <td id="firstNameOut${empIdTyped}">${firstNameTyped}</td>
+                <td id="lastNameOut${empIdTyped}">${lastNameTyped}</td>
+                <td id="empIdOut${empIdTyped}">${empIdTyped}</td>
+                <td id="jobTitleOut${empIdTyped}">${jobTitleTyped}</td>
+                <td id="annualSalaryOut${empIdTyped}">${annualSalaryTyped}</td>
+                <td class="delete" id="${empIdTyped}"><button>Remove</button></td>
             </tbody>
         `)
         // Add Employee To an Object
@@ -79,9 +78,9 @@ function storeInfo(){
             jobTitle: jobTitleTyped,
             annualSalary: annualSalaryTyped
         } // end object employeeIn
-        employees.push( employeeIn )
+        employees.push( employeeIn );
         
-    // calcSalary();
-    monthlyAppend();
+    calcSalary();
+    // monthlyAppend();
     }) // end click submit
 } // end storeInfo
