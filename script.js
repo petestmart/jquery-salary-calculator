@@ -72,11 +72,11 @@ function storeInfo(){
              <tbody>
              <tr>
                 <td id="firstNameOut">${firstNameTyped}</td>
-                <td id="lastNameOut${empIdTyped}" class="${empIdTyped}">${lastNameTyped}</td>
-                <td id="empIdOut${empIdTyped}" class="${empIdTyped}">${empIdTyped}</td>
-                <td id="jobTitleOut${empIdTyped}" class="${empIdTyped}">${jobTitleTyped}</td>
-                <td id="annualSalaryOut${empIdTyped}" class="${empIdTyped}">${annualSalaryTyped}</td>
-                <td id="delete${empIdTyped}" class="deleteButton"><button>Remove</button></td>
+                <td id="lastNameOut">${lastNameTyped}</td>
+                <td id="empIdOut">${empIdTyped}</td>
+                <td id="jobTitleOut">${jobTitleTyped}</td>
+                <td id="annualSalaryOut">${annualSalaryTyped}</td>
+                <td id="delete" class="deleteButton"><button>Remove</button></td>
             </tr>
             </tbody>
         `)

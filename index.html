@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="style.css">
     <script src="jquery.js"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>jQuery Salary Calculator</title>
 </head>
 <body>
+<div class="container-fluid">
     <h1>jQuery Salary Calculator</h1>
     <div class="form">
         <h2>Add Employee</h2>
@@ -22,7 +25,7 @@
     <div class="button">
         <button id="submit">Submit</button>
     </div>
-    <div class="table">
+    <div class="table table-striped">
         <h2>Employees</h2>
         <table id="employeeDataTable">
             <thead> <!-- columns -->
@@ -32,7 +35,7 @@
                 <th>Job Title</th>
                 <th>Annual Salary</th>
                 
-            <tbody>
+            <tbody >
                 <!-- <td id="firstNameOut"> table data 1</td>
                 <td id="lastNameOut"> table data 2</td>
                 <td id="empIdOut"> table data 3</td>
@@ -45,6 +48,7 @@
     <div class="monthlyCalculator">
         Total Monthly: $<span id="totalMonthly">0</span>
     </div>
+</div>
 </body>
 </html>
 
