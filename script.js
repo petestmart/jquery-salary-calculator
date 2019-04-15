@@ -29,6 +29,14 @@ function calcSalary() {
     monthlyAppend();
 } // end function calcSalary
 
+// function to handle click event on delete employee event
+function deleteEmp() {
+        $( '#employeeDataTable' ).on( 'click', '.deleteButton', function() {
+        console.log( 'delete button clicked' );
+        $(this).parent('tr').remove();
+    } // end click button to run fxn
+    )} // end function deleteEmp
+
 // function to append the new data to the DOM
 function monthlyAppend() {
     console.log('in monthlyAppend');
@@ -44,7 +52,7 @@ function readyNow() {
     console.log( 'JQ is R2G' );
     
     storeInfo();
-
+    deleteEmp();
 }
 
 // take in information on button click and append it to the DOM
@@ -62,12 +70,14 @@ function storeInfo(){
         console.log(`user typed ${firstNameTyped}, ${lastNameTyped}, ${empIdTyped}, ${jobTitleTyped}, ${annualSalaryTyped}`);
         $( '#employeeDataTable' ).append(`
              <tbody>
-                <td id="firstNameOut${empIdTyped}">${firstNameTyped}</td>
-                <td id="lastNameOut${empIdTyped}">${lastNameTyped}</td>
-                <td id="empIdOut${empIdTyped}">${empIdTyped}</td>
-                <td id="jobTitleOut${empIdTyped}">${jobTitleTyped}</td>
-                <td id="annualSalaryOut${empIdTyped}">${annualSalaryTyped}</td>
-                <td class="delete" id="${empIdTyped}"><button>Remove</button></td>
+             <tr>
+                <td id="firstNameOut">${firstNameTyped}</td>
+                <td id="lastNameOut${empIdTyped}" class="${empIdTyped}">${lastNameTyped}</td>
+                <td id="empIdOut${empIdTyped}" class="${empIdTyped}">${empIdTyped}</td>
+                <td id="jobTitleOut${empIdTyped}" class="${empIdTyped}">${jobTitleTyped}</td>
+                <td id="annualSalaryOut${empIdTyped}" class="${empIdTyped}">${annualSalaryTyped}</td>
+                <td id="delete${empIdTyped}" class="deleteButton"><button>Remove</button></td>
+            </tr>
             </tbody>
         `)
         // Add Employee To an Object
